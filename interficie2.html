@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Prototipo Interficie Ionfilter2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="ionfilter2.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+
+  <h1>Equipos descalcificadores <small>aplicativo cálculo de equipos descalcificadores</small></h1>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="panel panel-default">
+    <div class="panel-body">
+    <h2>Datos entrada</h2>
+    <form>
+
+      <div class="form-group">
+      <label for="dureza">Selecciona la dureza del agua:</label>
+      <select id="dureza" class="form-control"  required>
+        <option value ="5">5ºHf Dureza muy baja</option>
+        <option value ="10">10ºHF Dureza baja</option>
+        <option value ="15">15ºHF Dureza baja</option>
+        <option value ="20">20ºHF Dureza moderada</option>
+        <option value ="25">25ºHF Dureza moderada</option>
+        <option value ="30">30ºHF Dureza moderada</option>
+        <option value ="35">35ºHF Dureza alta</option>
+        <option value ="40">40ºHF Dureza alta</option>
+        <option value ="45">45ºHF Dureza alta</option>
+        <option value ="50">50ºHF Dureza muy alta</option>
+        <option value ="55">55ºHF Dureza muy alta</option>
+        <option value ="60">60ºHF Dureza muy alta</option>
+        <option value ="65">65ºHF Dureza muy alta</option>
+        <option value ="70">70ºHF Dureza muy alta</option>
+        <option value ="75">75ºHF Dureza muy alta</option>
+        <option value ="80">80ºHF Dureza extrema</option>
+        <option value ="85">85ºHF Dureza extrema</option>
+        <option value ="90">90ºHF Dureza extrema</option>
+        <option value ="95">95ºHF Dureza extrema</option>
+      </select>
+    </div>
+    <hr>
+
+    <div class="form-group">
+    <label for="vivienda">Selecciona tipo de vivienda:</label>
+    <select id="tipoCasa" class="form-control" required>
+      <option value="apartamento">Apartamento</option>
+      <option value="casa">Casa</option>
+    </select>
+    </div>
+    <hr>
+
+    <div class="form-group">
+    <label for="numero">¿Número personas en la vivienda?</label>
+    <input id="numPersonas" name="numero" type="number" min="1" max="8" value="1" required />
+    </div>
+    <hr>
+
+
+  <button type="button" title="Muestra el equipo más adecuado" class="btn btn-primary" onclick="evaluarResultats()">Mostrar equipo</button>
+
+  <button type="reset" title="Borrar los datos" class="btn" onclick="borrar()">Borrar</button>
+  </form>
+
+      <div class="clearfix">...</div>
+
+
+    </div>
+    </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="panel panel-default">
+    <div class="panel-body">
+    <h2>Datos vivienda</h2>
+
+    <p>Dureza del agua (ºHF): <span id="mostraDureza"></span></p>
+    <p>Tipo de vivienda: <span id="mostraTipo"></span></p>
+    <p>Número de personas: <span id="mostraNumPersonas"></span></p>
+    <p>Consumo estimado (litros/dia): <span id="mostraConsEst"></span></p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+    <div class="panel panel-default">
+    <div class="panel-body">
+    <h2>Equipo recomendado</h2>
+    <div id="capcaleraResultats" class="well"></div>
+    
+    <div class="text-center">
+    <img src="choose.png" id="imatge" class="img-responsive center-block" alt="Imagen muestra">
+    </div>
+    <hr>
+
+    <p>Modelo: <span id="mostraModelo"></span></p>
+    <p>Regeneración cada: <span id="mostraRegeneracion"></span></p>
+    <p>Autonomia: <span id="mostraAutonomia"></span></p>
+    <p>Consumo de sal/dia: <span id="mostraConsumoSal"></span></p>
+    <p>Consumo de sal/año: <span id="mostraSalAno"></span></p>
+    <p>Frecuencia de sal/dias: <span id="mostraCargaSal"></span></p>
+    </div>
+    </div>
+    </div>
+
+
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+    <h2>Otros equipos recomendados</h2>
+    <p id="otrosEquipos1"></p>
+    <p id="otrosEquipos2"></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+  </div>
+
+
+
+
+<script src="ionfilter2.js"></script>
+
+    
+</body>
+</html>
