@@ -1,3 +1,4 @@
+/* Jaume */
 /* constant del programa */
 const consumoRealE8 = 13.7;
 const consumoRealE11 = 18.8;
